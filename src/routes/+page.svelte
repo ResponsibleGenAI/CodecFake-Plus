@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from '$app/paths';
 	import { onMount } from 'svelte';
 	import { gsap } from 'gsap';
 	import Navbar from '../components/Navbar.svelte';
@@ -27,13 +28,13 @@
 			title: 'News Item 1',
 			date: 'March 15, 2025',
 			summary: 'Summary of news item 1.',
-			link: '/news/news-item-1'
+			link: 'news'
 		},
 		{
 			title: 'News Item 2',
 			date: 'March 10, 2025',
 			summary: 'Summary of news item 2.',
-			link: '/news/news-item-2'
+			link: 'news'
 		}
 	];
 
@@ -90,13 +91,13 @@
 					class="dataset-item transform rounded-lg bg-white p-6 shadow-md transition-shadow duration-300 hover:-translate-y-1 hover:shadow-xl"
 				>
 					<h3 class="mb-2 text-xl font-bold">
-						<a href={`/datasets/${dataset.slug}`} class="text-blue-500 hover:underline">
+						<a href={`${base}/datasets/${dataset.slug}`} class="text-blue-500 hover:underline">
 							{dataset.name}
 						</a>
 					</h3>
 					<p class="mb-4 text-gray-700">{dataset.description}</p>
 					<div class="flex space-x-4 text-sm">
-						<a href={dataset.link} class="text-blue-500 hover:underline" target="_blank">Dataset</a>
+						<a href='{base}/{dataset.link}' class="text-blue-500 hover:underline" target="_blank">Dataset</a>
 						<a href={dataset.paper} class="text-blue-500 hover:underline" target="_blank">Paper</a>
 					</div>
 				</div>
