@@ -10,7 +10,7 @@ const config = {
 			fallback: '404.html'
 		}),
     paths: {
-			base: process.argv.includes('dev') ? '' : '/CodecFake-Plus/'
+			base: process.argv.includes('dev') ? '' : '/CodecFake-Plus'
     }
 	}
 };
